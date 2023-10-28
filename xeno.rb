@@ -10,7 +10,7 @@ class Xeno < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/siansiansu/go-xeno/releases/download/v1.0.0/go-xeno_Darwin_arm64.tar.gz"
-      sha256 "7d7bf899a00eec80ba6f193b3c5d15f23bcc03386482ba0744fbdee9798e0be6"
+      sha256 "b8acf05d82140c46b7336776e590a2cd79ef8ed80dc00cdc7324463651c4c2f3"
 
       def install
         bin.install "xeno"
@@ -18,7 +18,7 @@ class Xeno < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/siansiansu/go-xeno/releases/download/v1.0.0/go-xeno_Darwin_x86_64.tar.gz"
-      sha256 "4d62e5261944e005d4f65f54ebd82b069f7ee856941a218e77e4380f4eaa83c6"
+      sha256 "c566c358ec530cb0afdb57aa6e30c17d90fff93eac35d8b48807e594831a9f6f"
 
       def install
         bin.install "xeno"
@@ -29,7 +29,7 @@ class Xeno < Formula
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/siansiansu/go-xeno/releases/download/v1.0.0/go-xeno_Linux_arm64.tar.gz"
-      sha256 "6e64069e2c73fa6439a2f730dd31b1b724f43a2c9c0bf92ad17ec103b32155ad"
+      sha256 "f1c1cc95f74540bf009e4c36d1d084bca3a1a68d41469e57ad7dc2c053232cde"
 
       def install
         bin.install "xeno"
@@ -37,7 +37,7 @@ class Xeno < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/siansiansu/go-xeno/releases/download/v1.0.0/go-xeno_Linux_x86_64.tar.gz"
-      sha256 "cdeb1135d80780dddd8141cfc48abbade0a541117bc77bf7e35b6a4cd1c20efa"
+      sha256 "3b6df0289df634f14768b2f7cb98226ef2377953d46e9c776a5bf94799d384f8"
 
       def install
         bin.install "xeno"

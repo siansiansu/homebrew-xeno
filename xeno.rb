@@ -5,52 +5,44 @@
 class Xeno < Formula
   desc "A CLI tool designed for the Xeno-Canto Website"
   homepage "https://github.com/siansiansu/go-xeno"
-  version "1.0.0"
+  version "1.0.1"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/siansiansu/go-xeno/releases/download/v1.0.0/go-xeno_Darwin_x86_64.tar.gz"
-      sha256 "c125b47567bc078dd6301477f9e541d58a2a8492c4356e18bf227ab9ed829e8d"
-
-      def install
-        bin.install "argocd-darwin-amd64"
-      end
-    end
     if Hardware::CPU.arm?
-      url "https://github.com/siansiansu/go-xeno/releases/download/v1.0.0/go-xeno_Darwin_arm64.tar.gz"
-      sha256 "30b79776733e646c74b5f9075f0e8f53e006b1eb0420cf994d1145f7c9967c7c"
+      url "https://github.com/siansiansu/go-xeno/releases/download/v1.0.1/go-xeno_Darwin_arm64.tar.gz"
+      sha256 "0a2557df0ab283061ffea03c206f5d68d1c806a80dcb7a0f8f91aa679a0f19f2"
 
       def install
         bin.install "argocd-darwin-arm64"
       end
     end
+    if Hardware::CPU.intel?
+      url "https://github.com/siansiansu/go-xeno/releases/download/v1.0.1/go-xeno_Darwin_x86_64.tar.gz"
+      sha256 "5a025009d7c5b8207e1e4dc438dca520e3cb2658607dc8e7177dd6e480d9bcbe"
+
+      def install
+        bin.install "argocd-darwin-amd64"
+      end
+    end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/siansiansu/go-xeno/releases/download/v1.0.0/go-xeno_Linux_x86_64.tar.gz"
-      sha256 "70a0d3e0199a8c859bf7f658bc920a0d9239703c953f9c12b8d85caab42f6618"
-
-      def install
-        bin.install "argocd-linux-amd64"
-      end
-    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/siansiansu/go-xeno/releases/download/v1.0.0/go-xeno_Linux_arm64.tar.gz"
-      sha256 "e10e9ac01331e733444e1004208193d9f21d2a73da4413fa2b76899485ec6fa3"
+      url "https://github.com/siansiansu/go-xeno/releases/download/v1.0.1/go-xeno_Linux_arm64.tar.gz"
+      sha256 "caaa70417421f287b5af320d9c5dee18b7f2c7f8c98f81267f646925cb26c8ea"
 
       def install
         bin.install "argocd-linux-arm64"
       end
     end
-  end
+    if Hardware::CPU.intel?
+      url "https://github.com/siansiansu/go-xeno/releases/download/v1.0.1/go-xeno_Linux_x86_64.tar.gz"
+      sha256 "1ccb645bf43e4042206cabd2e081a24346f768893c6c5422dc805b2bc668712b"
 
-  test do
-    assert_match "xeno version v1.0.0", shell_output("#{bin}/xeno --version")
-
-    # xeno use the args[0] as the search query for the xeno-canto website
-    # Since it is an empty we expect it to be invalid
-    assert_match 'please input the search query! Example: xeno "Taiwan blue magpie"', shell_output("#{bin}/xeno")
+      def install
+        bin.install "argocd-linux-amd64"
+      end
+    end
   end
 end

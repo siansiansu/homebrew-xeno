@@ -9,39 +9,39 @@ class Xeno < Formula
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/siansiansu/go-xeno/releases/download/v1.0.0/go-xeno_Darwin_arm64.tar.gz"
-      sha256 "8a68d92f4694c925b8a80237adec93812e02b65bc0ef2dec32fc52b8d186cdbe"
-
-      def install
-        bin.install "argocd-darwin-arm64"
-      end
-    end
     if Hardware::CPU.intel?
       url "https://github.com/siansiansu/go-xeno/releases/download/v1.0.0/go-xeno_Darwin_x86_64.tar.gz"
-      sha256 "834c56a2933988c6a4ab947858ea89efe4546fba781c60be7f8290822b9a1e53"
+      sha256 "c125b47567bc078dd6301477f9e541d58a2a8492c4356e18bf227ab9ed829e8d"
 
       def install
         bin.install "argocd-darwin-amd64"
       end
     end
+    if Hardware::CPU.arm?
+      url "https://github.com/siansiansu/go-xeno/releases/download/v1.0.0/go-xeno_Darwin_arm64.tar.gz"
+      sha256 "30b79776733e646c74b5f9075f0e8f53e006b1eb0420cf994d1145f7c9967c7c"
+
+      def install
+        bin.install "argocd-darwin-arm64"
+      end
+    end
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/siansiansu/go-xeno/releases/download/v1.0.0/go-xeno_Linux_arm64.tar.gz"
-      sha256 "86cb2fd02bf94354cf07a6b7246dd0b87f56cdae3b86b6fa3800b0a29861ca45"
-
-      def install
-        bin.install "argocd-linux-arm64"
-      end
-    end
     if Hardware::CPU.intel?
       url "https://github.com/siansiansu/go-xeno/releases/download/v1.0.0/go-xeno_Linux_x86_64.tar.gz"
-      sha256 "9114532670335bbc43884ad69ab35b4b44cb0243d3ae43632fa15be53d67cd62"
+      sha256 "70a0d3e0199a8c859bf7f658bc920a0d9239703c953f9c12b8d85caab42f6618"
 
       def install
         bin.install "argocd-linux-amd64"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/siansiansu/go-xeno/releases/download/v1.0.0/go-xeno_Linux_arm64.tar.gz"
+      sha256 "e10e9ac01331e733444e1004208193d9f21d2a73da4413fa2b76899485ec6fa3"
+
+      def install
+        bin.install "argocd-linux-arm64"
       end
     end
   end

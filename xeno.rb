@@ -5,21 +5,21 @@
 class Xeno < Formula
   desc "A CLI tool designed for the Xeno-Canto Website"
   homepage "https://github.com/siansiansu/go-xeno"
-  version "1.0.2"
+  version "1.0.3"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/siansiansu/go-xeno/releases/download/v1.0.2/go-xeno_Darwin_x86_64.tar.gz"
-      sha256 "23f63f0433da5da0f3845e5e57ad763f3f26b83fa3b8639e3aef69ab351ca260"
+      url "https://github.com/siansiansu/go-xeno/releases/download/v1.0.3/go-xeno_Darwin_x86_64.tar.gz"
+      sha256 "1406c561d251a3d935f102e3a3340f49befb72f02223fa1cc29f34359162ec57"
 
       def install
         bin.install "xeno"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/siansiansu/go-xeno/releases/download/v1.0.2/go-xeno_Darwin_arm64.tar.gz"
-      sha256 "e38fb4f62926dca9f422e1fcc1f74db41a50b144bfd8141ac98b58f31706cf36"
+      url "https://github.com/siansiansu/go-xeno/releases/download/v1.0.3/go-xeno_Darwin_arm64.tar.gz"
+      sha256 "f2c776b381a7dbc9f7d54f73aa6fe87d175ca4857027e45d503352971fef6e53"
 
       def install
         bin.install "xeno"
@@ -28,17 +28,17 @@ class Xeno < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/siansiansu/go-xeno/releases/download/v1.0.2/go-xeno_Linux_x86_64.tar.gz"
-      sha256 "60a70a0dde84a3a80aecd8d26196cb7660189cfa590b44eeb18defb99593cd35"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/siansiansu/go-xeno/releases/download/v1.0.3/go-xeno_Linux_arm64.tar.gz"
+      sha256 "85de296521416e3c64e28486f1b104d575724843802c8d0ff6e6f619a9408d0c"
 
       def install
         bin.install "xeno"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/siansiansu/go-xeno/releases/download/v1.0.2/go-xeno_Linux_arm64.tar.gz"
-      sha256 "07d930d7e78ce38864adc721409721ff5ae7ca3e04580e4390f13fb26337cdb9"
+    if Hardware::CPU.intel?
+      url "https://github.com/siansiansu/go-xeno/releases/download/v1.0.3/go-xeno_Linux_x86_64.tar.gz"
+      sha256 "02e34b15289300c763f4975fc98c7d976d0de0eb05e58bb25f46838b378339c0"
 
       def install
         bin.install "xeno"

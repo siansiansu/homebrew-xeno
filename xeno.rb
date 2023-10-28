@@ -5,21 +5,21 @@
 class Xeno < Formula
   desc "A CLI tool designed for the Xeno-Canto Website"
   homepage "https://github.com/siansiansu/go-xeno"
-  version "1.0.1"
+  version "1.0.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/siansiansu/go-xeno/releases/download/v1.0.1/go-xeno_Darwin_arm64.tar.gz"
-      sha256 "6cb10ffb41b2d0249d5630d149c35fee76357ffb2fd4122ddd2776e412f62e3e"
+      url "https://github.com/siansiansu/go-xeno/releases/download/v1.0.0/go-xeno_Darwin_arm64.tar.gz"
+      sha256 "d420c51007e268a405e637b4c95df778d8af225ab85c479a887228b932ffa3eb"
 
       def install
         bin.install "xeno"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/siansiansu/go-xeno/releases/download/v1.0.1/go-xeno_Darwin_x86_64.tar.gz"
-      sha256 "3497d68225e055ea289c7a1dc062517c1434927cc9d62ed792f34014d995994e"
+      url "https://github.com/siansiansu/go-xeno/releases/download/v1.0.0/go-xeno_Darwin_x86_64.tar.gz"
+      sha256 "432cf4d617e47425163c8a284410d839809868ff158ab7287d9ff131df86ac0d"
 
       def install
         bin.install "xeno"
@@ -29,16 +29,16 @@ class Xeno < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/siansiansu/go-xeno/releases/download/v1.0.1/go-xeno_Linux_arm64.tar.gz"
-      sha256 "aca99ce093371fadcd58a23739fc0abe92df7405489bd08b42e46b02e1ae1060"
+      url "https://github.com/siansiansu/go-xeno/releases/download/v1.0.0/go-xeno_Linux_arm64.tar.gz"
+      sha256 "7a1dc40dc099b02c6d669f3eaf33ec2abfaf290f6d61fde99c90a6bc7815d7bd"
 
       def install
         bin.install "xeno"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/siansiansu/go-xeno/releases/download/v1.0.1/go-xeno_Linux_x86_64.tar.gz"
-      sha256 "e3694cc1b08922f79cca259541ab3b1a7ea4307a4de498b23ec2313092fef9e3"
+      url "https://github.com/siansiansu/go-xeno/releases/download/v1.0.0/go-xeno_Linux_x86_64.tar.gz"
+      sha256 "94b87d932e55b748cf5447dd5d8c1c1935402af2ccb3c8cddfd107ebb8bd56cc"
 
       def install
         bin.install "xeno"

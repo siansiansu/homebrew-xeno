@@ -11,18 +11,18 @@ class Xeno < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/siansiansu/go-xeno/releases/download/v1.0.0/go-xeno_Darwin_arm64.tar.gz"
-      sha256 "d420c51007e268a405e637b4c95df778d8af225ab85c479a887228b932ffa3eb"
+      sha256 "8a68d92f4694c925b8a80237adec93812e02b65bc0ef2dec32fc52b8d186cdbe"
 
       def install
-        bin.install "xeno"
+        bin.install "argocd-darwin-arm64"
       end
     end
     if Hardware::CPU.intel?
       url "https://github.com/siansiansu/go-xeno/releases/download/v1.0.0/go-xeno_Darwin_x86_64.tar.gz"
-      sha256 "432cf4d617e47425163c8a284410d839809868ff158ab7287d9ff131df86ac0d"
+      sha256 "834c56a2933988c6a4ab947858ea89efe4546fba781c60be7f8290822b9a1e53"
 
       def install
-        bin.install "xeno"
+        bin.install "argocd-darwin-amd64"
       end
     end
   end
@@ -30,18 +30,18 @@ class Xeno < Formula
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/siansiansu/go-xeno/releases/download/v1.0.0/go-xeno_Linux_arm64.tar.gz"
-      sha256 "7a1dc40dc099b02c6d669f3eaf33ec2abfaf290f6d61fde99c90a6bc7815d7bd"
+      sha256 "86cb2fd02bf94354cf07a6b7246dd0b87f56cdae3b86b6fa3800b0a29861ca45"
 
       def install
-        bin.install "xeno"
+        bin.install "argocd-linux-arm64"
       end
     end
     if Hardware::CPU.intel?
       url "https://github.com/siansiansu/go-xeno/releases/download/v1.0.0/go-xeno_Linux_x86_64.tar.gz"
-      sha256 "94b87d932e55b748cf5447dd5d8c1c1935402af2ccb3c8cddfd107ebb8bd56cc"
+      sha256 "9114532670335bbc43884ad69ab35b4b44cb0243d3ae43632fa15be53d67cd62"
 
       def install
-        bin.install "xeno"
+        bin.install "argocd-linux-amd64"
       end
     end
   end

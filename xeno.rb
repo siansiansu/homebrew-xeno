@@ -5,20 +5,20 @@
 class Xeno < Formula
   desc ""
   homepage "https://github.com/siansiansu/go-xeno"
-  version "1.1.1"
+  version "1.0.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/siansiansu/go-xeno/releases/download/v1.1.1/go-xeno_Darwin_arm64.tar.gz"
-      sha256 "1974f6d65d751de614624352285261040e89366eb20d6db812ec3523f156a9b5"
+      url "https://github.com/siansiansu/go-xeno/releases/download/v1.0.0/go-xeno_Darwin_arm64.tar.gz"
+      sha256 "7d7bf899a00eec80ba6f193b3c5d15f23bcc03386482ba0744fbdee9798e0be6"
 
       def install
         bin.install "xeno"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/siansiansu/go-xeno/releases/download/v1.1.1/go-xeno_Darwin_x86_64.tar.gz"
-      sha256 "59b1cc41542b8f84b89b59d117f778ec54ba8f51f105247e776f4f8c713da73c"
+      url "https://github.com/siansiansu/go-xeno/releases/download/v1.0.0/go-xeno_Darwin_x86_64.tar.gz"
+      sha256 "4d62e5261944e005d4f65f54ebd82b069f7ee856941a218e77e4380f4eaa83c6"
 
       def install
         bin.install "xeno"
@@ -28,16 +28,16 @@ class Xeno < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/siansiansu/go-xeno/releases/download/v1.1.1/go-xeno_Linux_arm64.tar.gz"
-      sha256 "868e7f3c9a754499069dde4c55821f27d3a9f2f798637929017c8d235dacae44"
+      url "https://github.com/siansiansu/go-xeno/releases/download/v1.0.0/go-xeno_Linux_arm64.tar.gz"
+      sha256 "6e64069e2c73fa6439a2f730dd31b1b724f43a2c9c0bf92ad17ec103b32155ad"
 
       def install
         bin.install "xeno"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/siansiansu/go-xeno/releases/download/v1.1.1/go-xeno_Linux_x86_64.tar.gz"
-      sha256 "74b3bfa41f307e1bd63d41763c67e2f604be81421c38f557748ee4e56f74ab2b"
+      url "https://github.com/siansiansu/go-xeno/releases/download/v1.0.0/go-xeno_Linux_x86_64.tar.gz"
+      sha256 "cdeb1135d80780dddd8141cfc48abbade0a541117bc77bf7e35b6a4cd1c20efa"
 
       def install
         bin.install "xeno"
